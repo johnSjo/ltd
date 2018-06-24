@@ -1,0 +1,12 @@
+.App {
+}
+
+.menuSection {
+    width: 30%;
+    border: 2px solid #eee;
+}
+
+.contentSection {
+    width: 70%;
+    border: 2px solid #eee;
+}
