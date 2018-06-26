@@ -48,7 +48,6 @@ class App extends Component {
                 })
                 .catch((error) => {
                     console.log(error);
-                    this.setState({ ...this.state, loadingSearch: false });
                 });
         }
     }
@@ -61,7 +60,10 @@ class App extends Component {
                     <ServiceMenu clickHandler={this.clickHandler.bind(this)} />
                     <CycleHireButton clickHandler={this.clickHandler.bind(this)} />
                 </div>
-                <ContentSection state={this.state} onCycleSearch={this.onCycleSearch.bind(this)}/>
+                <ContentSection
+                    state={this.state}
+                    onCycleSearch={this.onCycleSearch.bind(this)}
+                />
             </div>
         );
     }

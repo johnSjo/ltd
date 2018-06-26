@@ -3,19 +3,23 @@ import Service from './Service';
 import CycleHire from './CycleHire';
 
 const ContentSection = (props) => {
-    const { content } = props.state;
+    const { state } = props;
+    const { content } = state;
     let container = 'lineStatuses or Cycle Hire search';
 
     if (content) {
         switch (content.type) {
             case 'SERVICE':
-                container = <Service name={content.item.name} />;
+                container = <Service item={content.item} />;
                 break;
             case 'CYCLE_HIRE':
                 container = <CycleHire
                     onCycleSearch={props.onCycleSearch}
-                    seachResult={props.state.activeCycleSearches}
+                    seachResult={state.activeCycleSearches}
+                    loading={state.loadingSearch}
                 />;
+                break;
+            default :
                 break;
         }
     }

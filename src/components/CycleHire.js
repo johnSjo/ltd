@@ -5,25 +5,41 @@ const CycleHire = (props) => {
     const { seachResult } = props;
     const data = seachResult.data;
     const handleKeyPress = (e) => {
-        if (e.key === 'Enter') {
-            props.onCycleSearch(e.target.value);
-        }
+        seachString = e.target.value;
     };
+    const handleSubmit = (e) => {
+        props.onCycleSearch(seachString);
+        e.preventDefault();
+    };
+    const loadingStyle = { display: props.loading ? 'block' : 'none' };
+    const resultStyle = { display: data ? 'block' : 'none' };
+    let resultHeader;
     let result;
+    let seachString = '';
 
     if (data) {
         if (data.length > 0) {
             result = data.map((item) => <SeachResult item={item} key={item.id} />);
+            resultHeader = `Bike points for: ${seachResult.string}`;
         } else {
-            result = `No bike points found for ${seachResult.string}`;
+            resultHeader = `No bike points found for: ${seachResult.string}`;
         }
     }
     
     return (
         <div>
-            <div>Cycle hire</div>
-            <input type='text' onKeyPress={handleKeyPress}/>
-            {result}
+            <form onSubmit={handleSubmit}>
+                <label>
+                    Seach for bike points: 
+                    <input type='text' onKeyPress={handleKeyPress} />
+                </label>
+                <input type='submit' value='Seach' />
+            </form>
+            <div style={loadingStyle}>Seaching...</div>
+            <div style={resultStyle}>
+                <h3>{resultHeader}</h3>
+                {result}
+            </div>
         </div>
     );
 };
