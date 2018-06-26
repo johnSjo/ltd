@@ -6,8 +6,9 @@ const SeachResult = (props) => {
     const latLon = `(${lat}, ${lon})`;
 
     return (
-        <div>
-            {bikePoint} {commonName} {latLon}
+        <div className='bikeResults'>
+            <div>{bikePoint} {commonName}</div>
+            <div>{latLon}</div>
         </div>
     );
 };

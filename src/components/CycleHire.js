@@ -11,7 +11,8 @@ const CycleHire = (props) => {
         props.onCycleSearch(seachString);
         e.preventDefault();
     };
-    const loadingStyle = { display: props.loading ? 'block' : 'none' };
+    const idleStyle = { display: props.loading ? 'none' : 'inline-block' };
+    const loadingStyle = { display: props.loading ? 'inline-block' : 'none' };
     const resultStyle = { display: data ? 'block' : 'none' };
     let resultHeader;
     let result;
@@ -33,9 +34,9 @@ const CycleHire = (props) => {
                     Seach for bike points: 
                     <input type='text' onKeyPress={handleKeyPress} />
                 </label>
-                <input type='submit' value='Seach' />
+                <div style={loadingStyle}>Seaching...</div>
+                <input style={idleStyle} type='submit' value='Seach' />
             </form>
-            <div style={loadingStyle}>Seaching...</div>
             <div style={resultStyle}>
                 <h3>{resultHeader}</h3>
                 {result}

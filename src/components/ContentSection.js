@@ -5,7 +5,7 @@ import CycleHire from './CycleHire';
 const ContentSection = (props) => {
     const { state } = props;
     const { content } = state;
-    let container = 'lineStatuses or Cycle Hire search';
+    let container;
 
     if (content) {
         switch (content.type) {

@@ -1,18 +1,44 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,400italic");
+
+body {
+    margin: 0;
+    font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
 .App {
 }
 
+.page {
+    display: flex;
+}
+
 .menuSection {
-    width: 40%;
-    border: 2px solid #eee;
+    width: 250px;
+    min-width: 250px;
+    margin: 5px;
 }
 
 .contentSection {
-    border: 2px solid #eee;
+    margin: 5px;
 }
 
 .serviceItem {
+    padding: 3px;
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+}
+
+.serviceItem:hover {
+    font-weight: bold;
+    color: white;
+    background-color: #bcbce2;
 }
 
 .serviceIcons {
@@ -31,4 +57,17 @@
 .disruption {
     font-weight: bold;
     color: red;
+}
+
+.bikeResults {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bikeResults div {
+    margin: 0px 2px;
+}
+
+.disruptionReason {
+    margin: 5px 0px;
 }

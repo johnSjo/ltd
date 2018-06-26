@@ -56,14 +56,16 @@ class App extends Component {
         return (
             <div className='App'>
                 <h1>Ltd</h1>
-                <div className='menuSection'>
-                    <ServiceMenu clickHandler={this.clickHandler.bind(this)} />
-                    <CycleHireButton clickHandler={this.clickHandler.bind(this)} />
+                <div className='page'>
+                    <div className='menuSection'>
+                        <ServiceMenu clickHandler={this.clickHandler.bind(this)} />
+                        <CycleHireButton clickHandler={this.clickHandler.bind(this)} />
+                    </div>
+                    <ContentSection
+                        state={this.state}
+                        onCycleSearch={this.onCycleSearch.bind(this)}
+                    />
                 </div>
-                <ContentSection
-                    state={this.state}
-                    onCycleSearch={this.onCycleSearch.bind(this)}
-                />
             </div>
         );
     }

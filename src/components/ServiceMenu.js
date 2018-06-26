@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ServiceItem from './ServiceItem';
-
 export default class ServiceMenu extends Component {
     constructor () {
         super();
