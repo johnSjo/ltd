@@ -19,7 +19,10 @@ const ServiceItem = (props) => {
     };
 
     return (
-        <div className='serviceItem' onClick={() => clickHandler({ type: 'SERVICE', item: props.service })}>
+        <div className='serviceItem' onClick={() => clickHandler({
+            type: 'SERVICE',
+            item: props.service
+        })}>
             <div>{name}</div>
             <div className='serviceIcons'>
                 <div className='night' style={nightStyle}>N</div>

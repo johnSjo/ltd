@@ -4,7 +4,10 @@ const CycleHireButton = (props) => {
     const { clickHandler } = props;
 
     return (
-        <div className='serviceItem' onClick={() => clickHandler({ type: 'CYCLE_HIRE', item: { name: 'Cycle hire' } })}>Cycle hire</div>
+        <div className='serviceItem' onClick={() => clickHandler({
+            type: 'CYCLE_HIRE',
+            item: { name: 'Cycle hire' }
+        })}>Cycle hire</div>
     );
 };
 
