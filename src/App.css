@@ -2,11 +2,34 @@
 }
 
 .menuSection {
-    width: 30%;
+    width: 40%;
     border: 2px solid #eee;
 }
 
 .contentSection {
-    width: 70%;
+    width: 60%;
     border: 2px solid #eee;
+}
+
+.serviceItem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.serviceIcons {
+    display: flex;
+}
+
+.serviceIcons div {
+    margin-left: 10px;
+}
+
+.night {
+    font-weight: bold;
+    color: blue;
+}
+
+.disruption {
+    font-weight: bold;
+    color: red;
 }

@@ -20,19 +20,27 @@ export default class ServiceMenu extends Component {
     }
 
     render () {
+        const { clickHandler } = this.props;
         const { services } = this.state;
         const loadingStyle = { display: services.length === 0 ? 'auto' : 'none' };
 
         // order services by modeName and name
+        services.sort((a, b) => {
+            let sort = a.modeName.toLowerCase().localeCompare(b.modeName.toLowerCase());
+
+            if (sort === 0) {
+                sort = a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+            }
+
+            return sort;
+        });
 
         return (
             <div>
                 <div style={loadingStyle}>Loading services...</div>
-                <ul>
-                    {services.map((item) => (
-                        <ServiceItem name={item.name} key={item.id} />
-                    ))}
-                </ul>
+                {services.map((service) => (
+                    <ServiceItem service={service} clickHandler={clickHandler} key={service.id} />
+                ))}
             </div>
         );
     }
